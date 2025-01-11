@@ -20,10 +20,10 @@ validate(){
     fi
 }
 
-dnf list installed nodejs &>>$log_Name
+dnf list installed unzip &>>$log_Name
 if [ $? -ne 0 ]; then
-    dnf install nodejs -y &>>$log_Name
-    validate $1 "installing nodejs" 
+    dnf install unzip -y &>>$log_Name
+    validate $1 "installing unzip" 
 else
-    echo "alaredy nodejs is available"
+    echo "alaredy unzip is available"
 fi
