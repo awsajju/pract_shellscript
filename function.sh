@@ -29,7 +29,7 @@ fi
 dnf list installed $1
     if [ $? -ne 0 ];then
         dnf install $1 -y
-            validate $? "$1"
+            validate $? $1
     else
-        echo "$1"
+        echo $1
     fi
