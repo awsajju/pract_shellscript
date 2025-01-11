@@ -22,10 +22,10 @@ validation(){
 
 package=$1
 
-dnf list installed $1
+dnf list installed $package
     if [$? -ne 0 ];then
-        dnf install $1 -y
-            validate $? "$1"
+        dnf install $package -y
+            validate $? "$package"
     else
-        echo "package alaready available"
+        echo "$package"
     fi
