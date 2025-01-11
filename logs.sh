@@ -13,17 +13,17 @@ fi
 
 validate(){
     if [ $1 -ne 0 ];then
-        echo "installing package failure"
+        echo "$2 installing package failure"
         exit 1
     else
-        echo "installing package is success"
+        echo "$2 installing package is success"
     fi
 }
 
-dnf list installed tree 
+dnf list installed nodejs &>>$log_Name
 if [ $? -ne 0 ]; then
     dnf install tree -y
-    validate $1 "installing tree"
+    validate $1 "installing nodejs" &>>$log_Name
 else
     echo "alaredy tree is available"
 fi
