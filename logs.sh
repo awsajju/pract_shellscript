@@ -22,8 +22,8 @@ validate(){
 
 dnf list installed nodejs &>>$log_Name
 if [ $? -ne 0 ]; then
-    dnf install tree -y
-    validate $1 "installing nodejs" &>>$log_Name
+    dnf install nodejs -y &>>$log_Name
+    validate $1 "installing nodejs" 
 else
-    echo "alaredy tree is available"
+    echo "alaredy nodejs is available"
 fi
