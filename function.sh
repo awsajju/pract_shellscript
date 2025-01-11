@@ -27,9 +27,9 @@ if [ -z "$1" ]; then
 fi
 
 dnf list installed $1
-    if [$? -ne 0 ];then
+    if [ $? -ne 0 ];then
         dnf install $1 -y
-            validate $? "$p1"
+            validate $? "$1"
     else
         echo "$1"
     fi
