@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERID=(id -u)
+USERID=$(id -u)
 
 if [ $USERID -ne 0 ];then
     echo "You must have the sudo access to execute this"
@@ -16,7 +16,7 @@ else
 fi
 
 dnf install git -y
-if [ $? -ne 0 ]
+if [ $? -ne 0 ]; then
     echo "installing git failuer"
 else
     echo "installing git success"
