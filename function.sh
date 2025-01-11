@@ -21,6 +21,10 @@ validation(){
     fi
 }
 
+if [ -z "$package" ]; then
+    echo "Usage: $0 <package_name>"
+    exit 1
+fi
 
 dnf list installed $package
     if [$? -ne 0 ];then
