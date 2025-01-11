@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USERID=$(id -u)
+package=$1
 
 check_root(){
     if [ $USERID -ne 0 ];then
@@ -20,7 +21,6 @@ validation(){
     fi
 }
 
-package=$1
 
 dnf list installed $package
     if [$? -ne 0 ];then
