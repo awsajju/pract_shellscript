@@ -14,3 +14,10 @@ if [ $? -ne 0 ]; then
 else
     echo "mysql installing success"
 fi
+
+dnf install git -y
+if [ $? -ne 0 ]
+    echo "installing git failuer"
+else
+    echo "installing git success"
+fi
