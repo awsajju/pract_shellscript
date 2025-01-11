@@ -20,10 +20,10 @@ validate(){
     fi
 }
 
-dnf list installed unzip &>>$log_Name
+dnf list installed gcc &>>$log_Name
 if [ $? -ne 0 ]; then
-    dnf install unzip -y &>>$log_Name
-    validate $1 "installing unzip" 
+    dnf install gcc -y &>>$log_Name
+    validate $1 "installing gcc" 
 else
-    echo "alaredy unzip is available"
+    echo "alaredy gcc is available"
 fi
