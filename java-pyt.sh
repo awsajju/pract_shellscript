@@ -8,6 +8,7 @@ if [ $USERID -ne 0 ];then
 fi
 
 package=$1
+package=$2
 
 dnf list installed $1
  if [ $? -ne 0 ];then
@@ -21,3 +22,16 @@ dnf list installed $1
 else 
     echo "$1 is already available"
 fi
+
+dnf list installed $2
+    if [ $? -ne 0 ];then
+        dnf install $2 -y
+            if [ $? -ne 0 ]; then
+                echo "$2 installing package failure"
+                exit 1
+            else
+                echo "$2 installing package success"
+            fi 
+    else
+        echo "$2 installed package already"
+    fi
