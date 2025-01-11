@@ -31,5 +31,5 @@ dnf list installed $1
         dnf install $1 -y
             validation $? $1
     else
-        echo $1
+        echo "already $1 installed"
     fi
