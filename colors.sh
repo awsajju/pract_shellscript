@@ -18,10 +18,10 @@ check_root
 
 validate(){
     if [ $1 -ne 0 ];then
-        echo "$2 $R installing Failur $N"
+        echo -e "$2 $R installing Failur $N"
         exit 1
     else
-        echo "$2 $G installing success $N"
+        echo -e "$2 $G installing success $N"
     fi
 }
 
@@ -30,5 +30,5 @@ if [ $? -ne 0 ];then
     dnf install nginx -y
     validate $? "install nginx"
 else
-    echo "$Y Already installed $N"
+    echo -e "$Y Already installed $N"
 fi
