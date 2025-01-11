@@ -25,7 +25,7 @@ package=$1
 dnf list installed $1
     if [$? -ne 0 ];then
         dnf install $1 -y
-            validate $? "installing $1"
+            validate $? "$1"
     else
         echo "package alaready available"
     fi
