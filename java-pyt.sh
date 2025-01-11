@@ -7,10 +7,10 @@ if [ $USERID -ne 0 ];then
     exit 1
 fi
 
-dnf list installed $1
- if [ $1 -ne 0 ];then
-    dnf install $1 -y
-            if [ $1 -ne 0 ];then
+dnf list installed $package
+ if [ $? -ne 0 ];then
+    dnf install $package -y
+            if [ $? -ne 0 ];then
             echo "$1 installing failure"
             exit 1
         else
