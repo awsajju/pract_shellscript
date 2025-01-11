@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-Log_folder= /var/log/shell_pract.log
+Log_folder=/var/log/shell_pract.log
 log_file=$(echo 0 | cut -d "%" -f1)
 time_stamp=$(date +%Y-%m-%d-%H-%M-%S)
 log_Name=$Log_folder/$log_file-$time_stamp
@@ -13,10 +13,10 @@ fi
 
 validate(){
     if [ $1 -ne 0 ];then
-        echo "$2 installing package failure"
+        echo "$2 failure"
         exit 1
     else
-        echo "$2 installing package is success"
+        echo "$2  is success"
     fi
 }
 
