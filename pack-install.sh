@@ -16,6 +16,7 @@ if [ $? -ne 0 ];then
             echo "mysql installing failure"
         else
             echo "mysql installing successful"
+        fi
 else
     echo "mysql already installed"
 fi
@@ -27,6 +28,7 @@ if [ $? -ne 0 ];then
         echo "git installing failure"
     else
         echo "git installing successful"
+    fi
 else
     echo "git already installed"
 fi
