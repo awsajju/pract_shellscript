@@ -21,15 +21,15 @@ validation(){
     fi
 }
 
-if [ -z "$package" ]; then
+if [ -z "$1" ]; then
     echo "Usage: $0 <package_name>"
     exit 1
 fi
 
-dnf list installed $package
+dnf list installed $1
     if [$? -ne 0 ];then
-        dnf install $package -y
-            validate $? "$package"
+        dnf install $1 -y
+            validate $? "$p1"
     else
-        echo "$package"
+        echo "$1"
     fi
