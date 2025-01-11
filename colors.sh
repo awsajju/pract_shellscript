@@ -16,4 +16,19 @@ fi
 
 check_root
 
-if 
+validate(){
+    if [ $1 -ne 0 ];then
+        echo "$2 $R installing Failur $N"
+        exit 1
+    else
+        echo "$2 $G installing success $N"
+    fi
+}
+
+dnf list installed nginx
+if [ $? -ne 0 ];then
+    dnf install nginx -y
+    validate $? "install nginx"
+else
+    echo "$Y Already installed $N"
+fi
