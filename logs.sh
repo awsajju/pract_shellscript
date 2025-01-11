@@ -5,7 +5,7 @@ USERID=$(id -u)
 Log_folder="/var/log/shell_pract.log"
 log_file=$(echo 0 | cut -d "%" -f1)
 time_stamp=$(date +%Y-%m-%d-%H-%M-%S)
-log_Name=$Log_folder/$log_file-$time_stamp
+log_Name="$Log_folder/$log_file-$time_stamp.log"
 if [ $USERID -ne 0 ];then
     echo "you must have the root access to execute this"
     exit 1
