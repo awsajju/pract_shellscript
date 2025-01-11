@@ -26,7 +26,7 @@ fi
 dnf list installed $2
     if [ $? -ne 0 ];then
         dnf install $2 -y
-            if [ $? -ne 0 ]; then
+            if [ $? -ne 0 ];then
                 echo "$2 installing package failure"
                 exit 1
             else
